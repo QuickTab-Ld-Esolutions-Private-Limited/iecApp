@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+$primary-color: #0056b3;
+$secondary-color: #f8f9fa;
+$text-dark: #333;
+$text-light: #fff;
+$accent-color: #ff9800;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  color: $text-dark;
+}

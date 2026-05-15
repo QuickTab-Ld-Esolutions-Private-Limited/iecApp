@@ -1,0 +1,107 @@
+// Variables matching the form's color scheme
+$primary-blue: #2c4365;
+$primary-red: #a85858;
+$background-light: #fdfdfd;
+$border-color: #e0e0e0;
+$text-dark: #333;
+$text-light: #666;
+
+.benefits-wrapper {
+  max-width: 1200px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+  color: $text-dark;
+  padding: 0 15px;
+}
+
+.benefits-header {
+  text-align: center;
+  margin-bottom: 30px;
+
+  h2 {
+    color: $primary-blue;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+
+    // Underline accent
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: $primary-red;
+      border-radius: 2px;
+    }
+  }
+
+  p {
+    color: $text-light;
+    font-size: 1.1rem;
+    margin-top: 15px;
+  }
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  // Responsive grid breakpoints
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.benefit-card {
+  background-color: $background-light;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 25px 20px;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-top: 4px solid transparent;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-top-color: $primary-blue;
+
+    .benefit-icon {
+      transform: scale(1.1);
+    }
+  }
+
+  .benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .benefit-title {
+    color: $primary-blue;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .benefit-description {
+    color: $text-light;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+}

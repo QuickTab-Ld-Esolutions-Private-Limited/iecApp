@@ -1,0 +1,179 @@
+// Variables matching the image's color scheme
+$header-bg-blue: #2c4365;
+$header-bg-red: #a85858;
+$submit-btn-bg: #8d5555;
+$submit-btn-border: #2c4365;
+$border-color: #e0e0e0;
+$text-color: #333;
+$required-color: #d32f2f;
+$background-light: #fdfdfd;
+
+.registration-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 80px auto 0;
+  font-family: Arial, sans-serif;
+  color: $text-color;
+
+  @media (min-width: 900px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+// Common Section Styles
+.form-section,
+.instructions-section {
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  background-color: $background-light;
+  overflow: hidden;
+}
+
+.form-section {
+  flex: 2;
+}
+
+.instructions-section {
+  flex: 1;
+}
+
+.section-header {
+  padding: 15px;
+  text-align: center;
+  color: white;
+
+  h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+.form-header {
+  background: linear-gradient(
+    90deg,
+    $header-bg-blue 0%,
+    $header-bg-red 50%,
+    $header-bg-blue 100%
+  );
+}
+
+.instructions-header {
+  background-color: $header-bg-red;
+}
+
+.section-body {
+  padding: 20px;
+}
+
+// Form Specific Styles
+.section-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 15px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+
+    .required {
+      color: $required-color;
+      margin-left: 3px;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+      border-color: $header-bg-blue;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}
+
+.address-group {
+  input,
+  select {
+    margin-bottom: 10px;
+  }
+}
+
+.radio-group {
+  .radio-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+
+    label {
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+}
+
+.declaration {
+  margin: 20px 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.submit-btn {
+  background-color: $submit-btn-bg;
+  color: white;
+  border: 4px solid $submit-btn-border;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+// Instructions Specific Styles
+.instructions-body {
+  ol {
+    margin: 0;
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+
+      strong {
+        color: #000;
+      }
+    }
+  }
+}
