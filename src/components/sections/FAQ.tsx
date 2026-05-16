@@ -99,7 +99,7 @@ const FaqSection = () => {
 
   return (
     <div className="faq-container" id="faqs">
-      <div className="faq-header">
+      <div className="primary-head">
         <h2>Frequently Asked Question (IEC)</h2>
       </div>
 

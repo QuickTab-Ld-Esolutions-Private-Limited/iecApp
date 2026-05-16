@@ -1,8 +1,6 @@
-@import "../../App.scss";
-
 .footer {
   background-color: #222;
-  color: $text-light;
+  color: var(--textLight);
   text-align: center;
   padding: 30px 20px;
 

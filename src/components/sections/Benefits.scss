@@ -1,16 +1,8 @@
-// Variables matching the form's color scheme
-$primary-blue: #2c4365;
-$primary-red: #a85858;
-$background-light: #fdfdfd;
-$border-color: #e0e0e0;
-$text-dark: #333;
-$text-light: #666;
-
 .benefits-wrapper {
   max-width: 1200px;
   margin: 40px auto;
   font-family: Arial, sans-serif;
-  color: $text-dark;
+  color: var(--textDark);
   padding: 0 15px;
 }
 
@@ -19,7 +11,7 @@ $text-light: #666;
   margin-bottom: 30px;
 
   h2 {
-    color: $primary-blue;
+    color: var(--primary);
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 10px;
@@ -35,13 +27,13 @@ $text-light: #666;
       transform: translateX(-50%);
       width: 60px;
       height: 3px;
-      background-color: $primary-red;
+      background-color: var(--secondary);
       border-radius: 2px;
     }
   }
 
   p {
-    color: $text-light;
+    color: var(--textDark);
     font-size: 1.1rem;
     margin-top: 15px;
   }
@@ -63,20 +55,20 @@ $text-light: #666;
 }
 
 .benefit-card {
-  background-color: $background-light;
-  border: 1px solid $border-color;
+  background-color: var(--primaryBg);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 25px 20px;
   text-align: center;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  border-top: 4px solid transparent;
+  border-top: 4px solid var(--secondary);
 
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    border-top-color: $primary-blue;
+    border-top-color: var(--primary);
 
     .benefit-icon {
       transform: scale(1.1);
@@ -91,7 +83,7 @@ $text-light: #666;
   }
 
   .benefit-title {
-    color: $primary-blue;
+    color: var(--primary);
     font-size: 1.2rem;
     font-weight: 600;
     margin-top: 0;
@@ -99,7 +91,7 @@ $text-light: #666;
   }
 
   .benefit-description {
-    color: $text-light;
+    color: var(--textDark);
     font-size: 0.95rem;
     line-height: 1.5;
     margin: 0;

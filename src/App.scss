@@ -5,11 +5,63 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-$primary-color: #0056b3;
-$secondary-color: #f8f9fa;
-$text-dark: #333;
-$text-light: #fff;
-$accent-color: #ff9800;
+// var(--primaryBg): #f8f9fa;
+// var(--secondary): #ff9800;
+
+// var(--primary): #2c4365;
+// var(--secondary): #a85858;
+// var(--primaryBg): #fdfdfd;
+// var(--border): #e0e0e0;
+// var(--textDark): #333;
+// var(--greenSuccess): #28a745;
+
+// // $bg-gradient-start: #ff7e38;
+// // $bg-gradient-end: #364e6b;
+// var(--primaryBg): #e6e9ec;
+// var(--primaryBg)-hover: #f0f2f5;
+// var(--secondary): #f25c05;
+// var(--primary): #274769;
+// var(--textDark): #111;
+// var(--border): #d1d5db;
+
+// var(--primary): #2c4365;
+// var(--secondary): #a85858;
+// var(--primaryBg): #fdfdfd;
+// var(--border): #e0e0e0;
+
+// var(--primary): #2c4365;
+// var(--secondary): #a85858;
+// var(--primaryBg): #fdfdfd;
+// var(--border): #e0e0e0;
+// var(--textDark): #333;
+
+// var(--primary): #2c4365;
+// var(--secondary): #a85858;
+// var(--secondary): #8d5555;
+// var(--primary)r: #2c4365;
+// var(--border): #e0e0e0;
+// var(--textDark): #333;
+// var(--requireRed): #d32f2f;
+// var(--primaryBg): #fdfdfd;
+
+:root {
+  --primary: #0056b3;
+  --secondary: #ff9800;
+  --primaryBg: #f8f9fa;
+  --textDark: #333;
+  --textLight: #fff;
+  --border: #e0e0e0;
+  --greenSuccess: #28a745;
+  --requireRed: #d32f2f;
+
+  // gradient
+  --primaryGradient: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--secondary) 50%,
+    var(--primary) 100%
+  );
+}
 
 html {
   scroll-behavior: smooth;
@@ -17,5 +69,38 @@ html {
 
 body {
   background-color: #ffffff;
-  color: $text-dark;
+  color: var(--textDark);
+}
+
+.primary-head {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h2 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+
+    // Red Underline accent
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--secondary);
+      border-radius: 2px;
+    }
+  }
+
+  p {
+    color: var(--textDark);
+    font-size: 1.1rem;
+    margin-top: 15px;
+  }
 }

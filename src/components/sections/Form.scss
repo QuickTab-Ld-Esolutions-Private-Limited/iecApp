@@ -1,13 +1,3 @@
-// Variables matching the image's color scheme
-$header-bg-blue: #2c4365;
-$header-bg-red: #a85858;
-$submit-btn-bg: #8d5555;
-$submit-btn-border: #2c4365;
-$border-color: #e0e0e0;
-$text-color: #333;
-$required-color: #d32f2f;
-$background-light: #fdfdfd;
-
 .registration-wrapper {
   display: flex;
   flex-direction: column;
@@ -15,7 +5,7 @@ $background-light: #fdfdfd;
   max-width: 1200px;
   margin: 80px auto 0;
   font-family: Arial, sans-serif;
-  color: $text-color;
+  color: var(--textDark);
 
   @media (min-width: 900px) {
     flex-direction: row;
@@ -26,9 +16,9 @@ $background-light: #fdfdfd;
 // Common Section Styles
 .form-section,
 .instructions-section {
-  border: 1px solid $border-color;
+  border: 1px solid var(--border);
   border-radius: 4px;
-  background-color: $background-light;
+  background-color: var(--primaryBg);
   overflow: hidden;
 }
 
@@ -53,16 +43,11 @@ $background-light: #fdfdfd;
 }
 
 .form-header {
-  background: linear-gradient(
-    90deg,
-    $header-bg-blue 0%,
-    $header-bg-red 50%,
-    $header-bg-blue 100%
-  );
+  background: var(--primaryGradient);
 }
 
 .instructions-header {
-  background-color: $header-bg-red;
+  background-color: var(--secondary);
 }
 
 .section-body {
@@ -87,7 +72,7 @@ $background-light: #fdfdfd;
     font-size: 0.9rem;
 
     .required {
-      color: $required-color;
+      color: var(--requireRed);
       margin-left: 3px;
     }
   }
@@ -107,7 +92,7 @@ $background-light: #fdfdfd;
 
     &:focus {
       outline: none;
-      border-color: $header-bg-blue;
+      border-color: var(--primary);
     }
   }
 
@@ -145,9 +130,9 @@ $background-light: #fdfdfd;
 }
 
 .submit-btn {
-  background-color: $submit-btn-bg;
+  background-color: var(--secondary);
   color: white;
-  border: 4px solid $submit-btn-border;
+  border: 4px solid var(--primary) r;
   padding: 12px 30px;
   font-size: 1rem;
   font-weight: bold;
