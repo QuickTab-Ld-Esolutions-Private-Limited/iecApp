@@ -11,13 +11,15 @@ const Header = () => {
           </h2>
         </div>
         <nav className="nav-links">
-          <a href="#iecForm">IEC Registration / Modify / Renewal</a>
-          <a href="#process">Process</a>
-          <a href="#documents">Documents Required</a>
+          <a href="#iecForm">IEC Registration</a>
+          <a href="#">IEC Modification</a>
+          <a href="#">IEC Renewal</a>
           <a href="#benefits">Benefits</a>
           <a href="#faqs">Faq</a>
         </nav>
-        <button className="cta-btn">Apply Now</button>
+        <a href="#">
+          <button className="cta-btn">Contact Us</button>
+        </a>
       </div>
     </header>
   );

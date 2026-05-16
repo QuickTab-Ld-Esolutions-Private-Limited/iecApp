@@ -16,17 +16,21 @@ const IecProcess = () => {
   ];
 
   return (
-    <section className="process" id="process">
-      <div className="process-container">
-        <h2>How It Works</h2>
-        <div className="process-grid">
-          {processData.map((process, index) => (
-            <div className="process-card" key={index}>
-              <div className="step-number">{index + 1}</div>
-              <h4>{process.title}</h4>
-              <p>{process.desc}</p>
-            </div>
-          ))}
+    <section className="process_wrapper">
+      <div className="content-wrapper process" id="process">
+        <div className="process-container">
+          <div className="primary-head">
+            <h2>How It Works</h2>
+          </div>
+          <div className="process-grid">
+            {processData.map((process, index) => (
+              <div className="process-card" key={index}>
+                <div className="step-number">{index + 1}</div>
+                <h4>{process.title}</h4>
+                <p>{process.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

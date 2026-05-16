@@ -48,8 +48,8 @@ const IecBenefits = () => {
   ];
 
   return (
-    <div className="benefits-wrapper" id="benefits">
-      <div className="benefits-header">
+    <section className="content-wrapper benefits-wrapper" id="benefits">
+      <div className="primary-head">
         <h2>Key Benefits of IEC Registration</h2>
         <p>
           Discover why obtaining an Import Export Code is essential for your
@@ -66,7 +66,7 @@ const IecBenefits = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

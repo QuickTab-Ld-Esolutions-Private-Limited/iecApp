@@ -48,8 +48,8 @@ const IecDocuments = () => {
   ];
 
   return (
-    <div className="documents-wrapper" id="documents">
-      <div className="documents-header">
+    <section className="content-wrapper documents-wrapper" id="documents">
+      <div className="primary-head">
         <h2>Documents Required for IEC</h2>
         <p>
           Keep these documents ready before starting your Import Export Code
@@ -71,7 +71,7 @@ const IecDocuments = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

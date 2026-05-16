@@ -2,7 +2,7 @@ import "./Form.scss";
 
 const RegistrationForm = () => {
   return (
-    <div className="registration-wrapper" id="iecForm">
+    <section className="content-wrapper registration-wrapper" id="iecForm">
       {/* LEFT COLUMN: FORM */}
       <div className="form-section">
         <div className="section-header form-header">
@@ -218,7 +218,7 @@ const RegistrationForm = () => {
           </ol>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

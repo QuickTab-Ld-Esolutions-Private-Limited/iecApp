@@ -1,56 +1,71 @@
-.process {
-  padding: 60px 20px;
-  background-color: var(--textLight);
-  text-align: center;
+.process_wrapper {
+  background-color: var(--primaryYellowBg);
+  margin-bottom: 80px;
+  padding: 80px 0;
 
-  h2 {
-    color: var(--primary);
+  @media (max-width: 640px) {
     margin-bottom: 40px;
-    font-size: 2rem;
+    padding: 40px 0;
   }
 
-  .process-container {
-    max-width: 1200px;
+  .process {
     margin: 0 auto;
-  }
+    background-color: var(--textLight);
+    text-align: center;
+    background: transparent;
 
-  .process-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-  }
-
-  .process-card {
-    padding: 30px;
-    background: var(--primaryBg);
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    transition: transform 0.3s;
-
-    &:hover {
-      transform: translateY(-5px);
+    h2 {
+      color: var(--primary);
+      font-size: 2rem;
     }
 
-    .step-number {
-      width: 50px;
-      height: 50px;
-      background: var(--secondary);
-      color: var(--textLight);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin: 0 auto 15px auto;
+    .process-container {
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    h4 {
-      margin-bottom: 10px;
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+
+      @media (max-width: 1200px) {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+      }
     }
-    p {
-      color: #666;
-      font-size: 0.95rem;
+
+    .process-card {
+      padding: 30px;
+      background: var(--primaryBg);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .step-number {
+        width: 50px;
+        height: 50px;
+        background: var(--secondary);
+        color: var(--textLight);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0 auto 15px auto;
+      }
+
+      h4 {
+        margin-bottom: 10px;
+      }
+      p {
+        color: #666;
+        font-size: 0.95rem;
+      }
     }
   }
 }

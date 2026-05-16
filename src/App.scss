@@ -48,6 +48,7 @@
   --primary: #0056b3;
   --secondary: #ff9800;
   --primaryBg: #f8f9fa;
+  --primaryYellowBg: #ffce85;
   --textDark: #333;
   --textLight: #fff;
   --border: #e0e0e0;
@@ -70,6 +71,11 @@ html {
 body {
   background-color: #ffffff;
   color: var(--textDark);
+}
+
+.content-wrapper {
+  width: 95vw;
+  max-width: 1200px;
 }
 
 .primary-head {

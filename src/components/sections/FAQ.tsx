@@ -98,7 +98,7 @@ const FaqSection = () => {
   ];
 
   return (
-    <div className="faq-container" id="faqs">
+    <section className="content-wrapper faq-container" id="faqs">
       <div className="primary-head">
         <h2>Frequently Asked Question (IEC)</h2>
       </div>
@@ -128,7 +128,7 @@ const FaqSection = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

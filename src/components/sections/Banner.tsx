@@ -8,7 +8,7 @@ const IecBannerSection = () => {
     "It is mandatory to update your Importer Exporter Code (IEC) between 1st April to 30th June to keep your IEC activated every year. Notification No. 58 / 201...";
 
   return (
-    <div className="iec-main-content">
+    <section className="iec-main-content">
       {/* 1. Page Sub-Header Gradient (matching Registration Form) */}
       <div className="header-gradient"></div>
 
@@ -41,7 +41,7 @@ const IecBannerSection = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

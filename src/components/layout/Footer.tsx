@@ -14,6 +14,12 @@ const Footer = () => {
           affiliated with the Government of India. We charge a fee for our
           expert registration services.
         </p>
+        <nav className="imp-links">
+          <a href="#">Contact Us</a>
+          <a href="#">Refund Policy</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms and Conditions</a>
+        </nav>
       </div>
     </footer>
   );
