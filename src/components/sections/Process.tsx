@@ -1,5 +1,5 @@
 /** styles */
-import "./process.scss";
+import "./Process.scss";
 
 const IecProcess = () => {
   const processData = [
