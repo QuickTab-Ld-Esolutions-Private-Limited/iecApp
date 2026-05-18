@@ -1,6 +1,16 @@
+/** styles */
 import "./Banner.scss";
 
-const IecBannerSection = () => {
+/** interfaces */
+interface IBannerSection {
+  head: string;
+  desc: string;
+}
+
+// <h1>Start Import Export Business Today</h1>
+// <p>Fast • Reliable • 100% Online Process</p>
+
+const IecBannerSection: React.FC<IBannerSection> = ({ head, desc }) => {
   const topText =
     "This is a private consultancy self registration portal for obtaining import export code. Portal fees are consultancy in nature.";
 
@@ -21,14 +31,12 @@ const IecBannerSection = () => {
         </div>
       </div>
 
-      {/* 3. Central Banner with Port Image and Overlays */}
+      {/* 3. Central Banner with Image and Overlays */}
       <div className="central-banner">
-        {/* Background image is handled by SCSS. 
-            The visual content should be a large port scene with a stack of shipping containers (blue, red, orange), cargo ships, a large container forklift lifting a red container, and an airplane in a clear blue sky. */}
         <div className="banner-overlay">
           <div className="banner-text-content">
-            <h1>Start Import Export Business Today</h1>
-            <p>Fast • Reliable • 100% Online Process</p>
+            <h1>{head}</h1>
+            <p>{desc}</p>
           </div>
         </div>
       </div>

@@ -1,27 +1,31 @@
+import { ToastContainer } from "react-toastify";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 /** layout */
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 
-/** sections */
-import IecBannerSection from "./components/sections/Banner";
-import RegistrationForm from "./components/sections/Form";
-import IecProcess from "./components/sections/Process";
-import IecDocuments from "./components/sections/Document";
-import IecBenefits from "./components/sections/Benefits";
-import FaqSection from "./components/sections/FAQ";
+/** pages */
+import Home from "./pages/Home";
+import IecModificationPage from "./pages/IecModification";
+import IecRenewalPage from "./pages/IecRenewal";
 
 function App() {
   return (
-    <div className="app-container">
+    <BrowserRouter>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        style={{ zIndex: 999999 }}
+      />
       <Header />
-      <IecBannerSection />
-      <RegistrationForm />
-      <IecProcess />
-      <IecDocuments />
-      <IecBenefits />
-      <FaqSection />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/iec-modification" element={<IecModificationPage />} />
+        <Route path="/iec-renewal" element={<IecRenewalPage />} />
+      </Routes>
       <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
 

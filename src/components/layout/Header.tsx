@@ -1,4 +1,5 @@
 /** styles */
+import { Link } from "react-router-dom";
 import "./Header.scss";
 
 const Header = () => {
@@ -11,15 +12,16 @@ const Header = () => {
           </h2>
         </div>
         <nav className="nav-links">
-          <a href="#iecForm">IEC Registration</a>
-          <a href="#">IEC Modification</a>
-          <a href="#">IEC Renewal</a>
+          <Link to="/">IEC Registration</Link>
+          <Link to="/iec-modification">IEC Modification</Link>
+          <Link to="/iec-renewal">IEC Renewal</Link>
+          <a href="#documents">Documents</a>
           <a href="#benefits">Benefits</a>
           <a href="#faqs">Faq</a>
         </nav>
-        <a href="#">
+        <Link to="#">
           <button className="cta-btn">Contact Us</button>
-        </a>
+        </Link>
       </div>
     </header>
   );
