@@ -1,4 +1,5 @@
 /** styles */
+import { Link } from "react-router-dom";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -15,10 +16,10 @@ const Footer = () => {
           expert registration services.
         </p>
         <nav className="imp-links">
-          <a href="#">Contact Us</a>
-          <a href="#">Refund Policy</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms and Conditions</a>
+          <Link to="/contact">Contact Us</Link>
+          <Link to="/terms">Terms and Conditions</Link>
+          <Link to="/refund-policy">Refund Policy</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
         </nav>
       </div>
     </footer>

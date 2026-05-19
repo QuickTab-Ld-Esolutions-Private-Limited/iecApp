@@ -19,7 +19,7 @@ const Header = () => {
           <a href="#benefits">Benefits</a>
           <a href="#faqs">Faq</a>
         </nav>
-        <Link to="#">
+        <Link to="/contact">
           <button className="cta-btn">Contact Us</button>
         </Link>
       </div>
