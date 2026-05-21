@@ -7,26 +7,49 @@ on:
 
 jobs:
   deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
 
+    env:
+      NODE_ENV: production
+
     steps:
-      - name: Checkout code
+      # =========================
+      # CHECKOUT SOURCE CODE
+      # =========================
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      # =========================
+      # SETUP NODE.JS
+      # =========================
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: pnpm
 
+      # =========================
+      # INSTALL PNPM
+      # =========================
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Install dependencies
-        run: pnpm install
+      # =========================
+      # INSTALL DEPENDENCIES
+      # =========================
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts=false
 
+      # =========================
+      # BUILD PROJECT
+      # =========================
       - name: Build Project
         run: pnpm build
 
+      # =========================
+      # DEPLOY TO HOSTINGER VIA FTP
+      # =========================
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
