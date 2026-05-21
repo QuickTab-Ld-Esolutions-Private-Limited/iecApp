@@ -1,0 +1,64 @@
+name: FTP Deployment to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    env:
+      NODE_ENV: production
+
+    steps:
+      # =========================
+      # CHECKOUT REPOSITORY
+      # =========================
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # =========================
+      # SETUP PNPM
+      # =========================
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      # =========================
+      # SETUP NODE.JS
+      # =========================
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      # =========================
+      # INSTALL DEPENDENCIES
+      # =========================
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts=false
+
+      # =========================
+      # BUILD PROJECT
+      # =========================
+      - name: Build Project
+        run: pnpm build
+
+      # =========================
+      # DEPLOY TO HOSTINGER VIA FTP
+      # =========================
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+          local-dir: ./dist/
+          server-dir: ./
