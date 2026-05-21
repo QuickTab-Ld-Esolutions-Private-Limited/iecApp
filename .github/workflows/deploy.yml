@@ -15,10 +15,18 @@ jobs:
 
     steps:
       # =========================
-      # CHECKOUT SOURCE CODE
+      # CHECKOUT REPOSITORY
       # =========================
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      # =========================
+      # SETUP PNPM
+      # =========================
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
 
       # =========================
       # SETUP NODE.JS
@@ -28,12 +36,6 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-
-      # =========================
-      # INSTALL PNPM
-      # =========================
-      - name: Install pnpm
-        run: npm install -g pnpm
 
       # =========================
       # INSTALL DEPENDENCIES
