@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 /** styles */
 import "./Form.scss";
 
 /** interfaces */
 import type { IRegistrationForm } from "../../../interface/common";
+import { toast } from "react-toastify";
 
 const IecRenewalForm = () => {
   const [formData, setFormData] = useState<IRegistrationForm>({
@@ -25,6 +27,10 @@ const IecRenewalForm = () => {
     sez: "no",
   });
 
+  const [formLoading, setFormLoading] = useState(false);
+
+  const navigate = useNavigate();
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -41,7 +47,65 @@ const IecRenewalForm = () => {
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log(formData);
+    console.log("Response Data:", formData);
+
+    navigate("/thank");
+
+    return formData;
+
+    try {
+      setFormLoading(true);
+      // const response = await fetch(
+      //   "https://webhook.eudyogaadhar.co.in/api/receive-form.php",
+      //   {
+      //     method: "POST",
+      //     body: JSON.stringify(formData),
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //   },
+      // );
+
+      // const data = await response.json();
+
+      // console.log("Response Data:", data);
+
+      // if (!data.success) {
+      //   toast.error(data.message);
+      //   return;
+      // }
+
+      // toast.success(data.message);
+
+      // // Reset form
+      // setFormData({
+      //   businessName: "",
+      //   businessType: "",
+      //   businessDescription: "",
+      //   businessActivity: "",
+      //   incorporationDate: "",
+      //   addressLine1: "",
+      //   addressLine2: "",
+      //   city: "",
+      //   state: "",
+      //   pincode: "",
+      //   branch: "",
+      //   pan: "",
+      //   email: "",
+      //   mobile: "",
+      //   sez: "no",
+      // });
+
+      // setFormLoading(false);
+
+      // return data;
+    } catch (error) {
+      console.error("Real Error:", error);
+      toast.error("Something went wrong, please try again");
+      throw new Error("Request failed", { cause: error });
+    } finally {
+      setFormLoading(false);
+    }
   };
 
   return (
@@ -62,7 +126,7 @@ const IecRenewalForm = () => {
 
               <input
                 type="text"
-                name="name"
+                name="businessName"
                 value={formData.businessName}
                 onChange={handleChange}
                 placeholder="Business Name"
@@ -77,7 +141,7 @@ const IecRenewalForm = () => {
               </label>
 
               <select
-                name="constitution"
+                name="businessType"
                 value={formData.businessType}
                 onChange={handleChange}
                 required
@@ -334,7 +398,7 @@ const IecRenewalForm = () => {
             </div>
 
             <button type="submit" className="submit-btn">
-              SUBMIT
+              {formLoading ? "Submitting..." : "SUBMIT"}
             </button>
           </form>
         </div>

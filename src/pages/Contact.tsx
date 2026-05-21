@@ -89,7 +89,9 @@ export default function Contact() {
                 <div className="details">
                   <h3>Email Address</h3>
                   <p>
-                    <Link to="mailto:#">email@company.com</Link>
+                    <Link to="mailto:email@importexportregistration.com">
+                      email@importexportregistration.com
+                    </Link>
                   </p>
                 </div>
               </div>

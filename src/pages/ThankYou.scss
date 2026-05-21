@@ -1,0 +1,121 @@
+/* Base Container */
+.thank-you-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  padding: 1rem;
+}
+
+/* Card Design with Entry Animation */
+.thank-you-card {
+  background: #ffffff;
+  padding: 3.5rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.05),
+    0 4px 6px rgba(0, 0, 0, 0.03);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Icon Styling */
+.icon-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background-color: #d1fae5;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.checkmark-icon {
+  width: 40px;
+  height: 40px;
+  color: #10b981;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 65;
+  stroke-dashoffset: 65;
+  animation: drawCircle 0.6s ease-out forwards;
+}
+
+.checkmark-check {
+  stroke-dasharray: 25;
+  stroke-dashoffset: 25;
+  animation: drawCheck 0.4s ease-out 0.4s forwards;
+}
+
+/* Typography */
+.thank-you-title {
+  font-size: 1.75rem;
+  color: #111827;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.thank-you-message {
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.thank-you-message strong {
+  color: #111827;
+}
+
+/* Button */
+.home-button {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.home-button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+/* Keyframe Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawCircle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawCheck {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
