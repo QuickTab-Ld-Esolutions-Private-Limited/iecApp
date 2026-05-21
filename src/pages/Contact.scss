@@ -37,6 +37,10 @@
       flex-direction: column;
       justify-content: space-between;
 
+      @media (max-width: 640px) {
+        padding: 10px;
+      }
+
       .info-header {
         h2 {
           font-size: 28px;

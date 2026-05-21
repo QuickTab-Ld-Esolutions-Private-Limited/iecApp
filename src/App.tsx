@@ -11,6 +11,7 @@ import IecModificationPage from "./pages/IecModification";
 import IecRenewalPage from "./pages/IecRenewal";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
+import ThankYou from "./pages/ThankYou";
 
 /** policy pages */
 import PrivacyPolicy from "./pages/policy/PrivacyPolicy";
@@ -37,6 +38,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/thank" element={<ThankYou />} />
       </Routes>
       <Footer />
     </BrowserRouter>
