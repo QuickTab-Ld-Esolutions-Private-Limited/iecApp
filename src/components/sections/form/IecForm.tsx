@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 
 const IecRegistrationForm = () => {
   const [formData, setFormData] = useState<IRegistrationForm>({
+    formType: "Registration",
     businessName: "",
     businessType: "",
     businessDescription: "",
@@ -49,56 +50,55 @@ const IecRegistrationForm = () => {
 
     console.log("Response Data:", formData);
 
-    navigate("/thank");
-
-    return formData;
-
     try {
       setFormLoading(true);
-      // const response = await fetch(
-      //   "https://webhook.eudyogaadhar.co.in/api/receive-form.php",
-      //   {
-      //     method: "POST",
-      //     body: JSON.stringify(formData),
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //   },
-      // );
+      const response = await fetch(
+        "https://webhook.importexportregistration.com/submit/iec-form",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
 
-      // const data = await response.json();
+      const data = await response.json();
 
-      // console.log("Response Data:", data);
+      console.log("Response Data:", data);
 
-      // if (!data.success) {
-      //   toast.error(data.message);
-      //   return;
-      // }
+      if (!data.success) {
+        toast.error(data.message);
+        return;
+      }
 
-      // toast.success(data.message);
+      toast.success(data.message);
 
-      // // Reset form
-      // setFormData({
-      //   businessName: "",
-      //   businessType: "",
-      //   businessDescription: "",
-      //   businessActivity: "",
-      //   incorporationDate: "",
-      //   addressLine1: "",
-      //   addressLine2: "",
-      //   city: "",
-      //   state: "",
-      //   pincode: "",
-      //   branch: "",
-      //   pan: "",
-      //   email: "",
-      //   mobile: "",
-      //   sez: "no",
-      // });
+      // Reset form
+      setFormData({
+        formType: "Registration",
+        businessName: "",
+        businessType: "",
+        businessDescription: "",
+        businessActivity: "",
+        incorporationDate: "",
+        addressLine1: "",
+        addressLine2: "",
+        city: "",
+        state: "",
+        pincode: "",
+        branch: "",
+        pan: "",
+        email: "",
+        mobile: "",
+        sez: "no",
+      });
 
-      // setFormLoading(false);
+      setFormLoading(false);
 
-      // return data;
+      navigate("/thank");
+
+      return data;
     } catch (error) {
       console.error("Real Error:", error);
       toast.error("Something went wrong, please try again");
