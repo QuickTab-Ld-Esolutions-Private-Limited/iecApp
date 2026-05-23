@@ -1,4 +1,5 @@
 export interface IRegistrationForm {
+  formType: "Registration" | "Renewal" | "Modification";
   businessName: string;
   businessType: string;
   businessDescription: string;
